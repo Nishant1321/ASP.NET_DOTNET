@@ -1,0 +1,83 @@
+﻿@page
+@model LIST.Pages.Lists.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    /* Add your CSS styles here */
+    .details-container {
+        margin-bottom: 20px;
+    }
+
+    .details-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .details-row {
+        margin-bottom: 10px;
+    }
+
+    .details-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .details-value {
+        margin-bottom: 10px;
+    }
+
+    .details-links {
+        margin-top: 20px;
+    }
+
+        .details-links a {
+            margin-right: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .details-links a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+<h1>Details</h1>
+
+<div class="details-container">
+    <h4 class="details-title">List Details</h4>
+    <hr />
+    <dl class="details-row">
+        <dt class="details-label col-sm-2">
+            @Html.DisplayNameFor(model => model.List.Name)
+        </dt>
+        <dd class="details-value col-sm-10">
+            @Html.DisplayFor(model => model.List.Name)
+        </dd>
+        <dt class="details-label col-sm-2">
+            @Html.DisplayNameFor(model => model.List.email)
+        </dt>
+        <dd class="details-value col-sm-10">
+            @Html.DisplayFor(model => model.List.email)
+        </dd>
+        <dt class="details-label col-sm-2">
+            @Html.DisplayNameFor(model => model.List.phoneNumber)
+        </dt>
+        <dd class="details-value col-sm-10">
+            @Html.DisplayFor(model => model.List.phoneNumber)
+        </dd>
+        <dt class="details-label col-sm-2">
+            @Html.DisplayNameFor(model => model.List.addressee)
+        </dt>
+        <dd class="details-value col-sm-10">
+            @Html.DisplayFor(model => model.List.addressee)
+        </dd>
+    </dl>
+</div>
+
+<div class="details-links">
+    <a asp-page="./Edit" asp-route-id="@Model.List.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

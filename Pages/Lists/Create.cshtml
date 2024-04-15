@@ -1,0 +1,94 @@
+﻿@page
+@model LIST.Pages.Lists.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    /* Add your CSS styles here */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>Create</h1>
+
+<h4>List</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="List.Name" class="control-label"></label>
+                <input asp-for="List.Name" class="form-control" required placeholder="eg. Nishant" />
+                <span asp-validation-for="List.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="List.email" class="control-label"></label>
+                <input asp-for="List.email" class="form-control"required placeholder="eg. nishant@gmail.com" />
+                <span asp-validation-for="List.email" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="List.phoneNumber" class="control-label" ></label>
+                <input asp-for="List.phoneNumber" class="form-control" required placeholder="eg. 9359248942" />
+                <span asp-validation-for="List.phoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="List.addressee" class="control-label"></label>
+                <input asp-for="List.addressee" class="form-control"required placeholder="eg. At Dabewadi tail,dist satara" />
+                <span asp-validation-for="List.addressee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
